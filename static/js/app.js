@@ -61,7 +61,7 @@ function showBubbleChart(otuID, dataset){
       var data = [trace1];
       
       var layout = {
-        title: `OTU ${otuID}`
+        title: `Test Subject ID ${otuID}`
       };
       
       Plotly.newPlot('bubble', data, layout);
