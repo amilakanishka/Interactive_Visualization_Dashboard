@@ -90,7 +90,7 @@ function showGuage(washIndex){
         {
             domain: { x: [0, 1], y: [0, 1] },
             value: washIndex,
-            title: { text: "Belly Button Washing Frequency" },
+            title: { text: "<b>Belly Button Washing Frequency</b><BR>Scrubs per week" },
             type: "indicator",
             mode: "gauge+number",
             gauge: { axis: { visible: false, range: [0, 10] } },
