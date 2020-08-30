@@ -3,13 +3,12 @@ var datasetOTU;
 function init(){
     d3.json("samples.json").then((data) => {
         datasetOTU = data;
-        showOTUChart(940, datasetOTU);
-        showBubbleChart(940, datasetOTU);
-        showDemogData(940,datasetOTU);
+        showOTUChart(datasetOTU.names[0], datasetOTU);
+        showBubbleChart(datasetOTU.names[0], datasetOTU);
+        showDemogData(datasetOTU.names[0],datasetOTU);
 
         // Configure dropdown list
         var OTUDropDown = d3.select("#selDataset");
-
         datasetOTU.names.forEach(function(name){
             OTUDropDown.append("option").text(name);
         });        
