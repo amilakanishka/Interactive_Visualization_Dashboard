@@ -76,12 +76,29 @@ function showDemogData(otuID, dataset){
     innerStr = innerStr + '</b>';
     console.log(innerStr);
     divDemog.html(innerStr);
+    showGuage(selectedIDdata[0]['wfreq']);
 }
 
 function optionChanged(selection){
     showOTUChart(selection, datasetOTU);
     showBubbleChart(selection, datasetOTU);
     showDemogData(selection,datasetOTU);
+}
+
+function showGuage(washIndex){
+    var data = [
+        {
+            domain: { x: [0, 1], y: [0, 1] },
+            value: washIndex,
+            title: { text: "Belly Button Washing Frequency" },
+            type: "indicator",
+            mode: "gauge+number",
+            gauge: { axis: { visible: false, range: [0, 10] } },
+        }
+    ];
+    
+    var layout = { width: 600, height: 500, margin: { t: 0, b: 0 } };
+    Plotly.newPlot('gauge', data, layout);   
 }
 
 init();
